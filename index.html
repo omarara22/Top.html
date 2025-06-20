@@ -81,6 +81,14 @@
             margin: 10px 0 15px;
         }
 
+        /* Channel title in cards */
+        .channel-name {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
         /* Filters */
         .filters {
             display: flex;
@@ -596,7 +604,7 @@
                     const topPerformer = this.employeeData[channel][0];
                     if (topPerformer) {
                         this.elements.allChannelsContainer.appendChild(
-                            this.createEmployeeCard(topPerformer, this.channelConfig[channel])
+                            this.createEmployeeCard(topPerformer, this.channelConfig[channel], true)
                         );
                     }
                 });
@@ -610,12 +618,12 @@
                 
                 employees.forEach(employee => {
                     this.elements.singleChannelContainer.appendChild(
-                        this.createEmployeeCard(employee, config)
+                        this.createEmployeeCard(employee, config, false)
                     );
                 });
             }
 
-            createEmployeeCard(employee, channelConfig) {
+            createEmployeeCard(employee, channelConfig, showChannelName) {
                 const card = document.createElement('div');
                 card.className = `channel-card ${channelConfig.class}`;
                 
@@ -627,6 +635,7 @@
                 
                 card.innerHTML = `
                     <div style="text-align: center; margin-bottom: 15px;">
+                        ${showChannelName ? `<div class="channel-name" style="color: ${channelConfig.color}">${channelConfig.name}</div>` : ''}
                         <div class="profile-image ${channelConfig.class}">
                             <img src="${genderImg}" loading="lazy" alt="Profile photo of ${employee.name}">
                         </div>
