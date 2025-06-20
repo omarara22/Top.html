@@ -47,25 +47,16 @@
             padding: 20px;
         }
 
-        /* Header with Logos */
+        /* Header */
         .header-container {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
+            justify-content: center;
             margin-bottom: 20px;
-        }
-
-        .logo-left {
-            height: 60px;
-        }
-
-        .logo-right {
-            height: 60px;
+            text-align: center;
         }
 
         .header-title {
             flex-grow: 1;
-            text-align: center;
             padding: 0 20px;
         }
 
@@ -291,21 +282,6 @@
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .logo-left, .logo-right {
-                margin: 10px 0;
-            }
-            
-            .header-title {
-                order: -1;
-                padding: 0;
-                margin-bottom: 15px;
-            }
-            
             .filters {
                 flex-direction: column;
                 gap: 15px;
@@ -319,13 +295,11 @@
 </head>
 <body>
     <div class="container" role="region" aria-labelledby="topPerformersHeading">
-        <!-- Header with Logos -->
+        <!-- Header -->
         <div class="header-container">
-            
             <div class="header-title">
                 <h2 id="topPerformersHeading">Contact Center Top Performers</h2>
             </div>
-            
         </div>
         
         <!-- Loading state -->
